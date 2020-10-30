@@ -1,0 +1,30 @@
+#include <iostream>
+#include <string>
+#include <algorithm>
+#include <map>
+using namespace std;
+#define ll long long
+
+int main()
+{
+	int n , q;
+	cin >> n;
+	int arr[100009] = {0};
+
+	for (int i = 1; i <= n; i++)
+	{
+		cin >> arr[i];
+		arr[i] += arr[i - 1];
+	}
+	cin >> q;
+	while (q--)
+	{
+		int i, j , sum = 0;
+		cin >> i >> j;
+		if (i == j)
+			cout << arr[j+1] - arr[i] << endl;
+		else
+			cout << arr[j+1] - arr[i] << endl;
+	
+	}
+}
