@@ -1,0 +1,68 @@
+#include <iostream>
+#include <deque>
+using namespace std;
+
+int main()
+{
+    int n;
+     cin>>n;
+     deque <int> st;
+     bool reversed = 0;
+     while(n--)
+     {
+       string ch;
+       cin>> ch;
+       int x;
+       if(ch == "toFront")
+       {
+         cin>>x;
+         if(!reversed)
+         st.push_front(x);
+         else
+         st.push_back(x);
+       }
+       else if(ch == "push_back")
+       {
+         cin>>x;
+         if(!reversed)
+         st.push_back(x);
+         else
+         st.push_front(x);
+          
+       }
+       else if(ch == "reverse")
+        reversed = !reversed;
+       else if(ch == "front")
+        {
+          if(!st.empty()&&!reversed)
+          {
+          cout<<st.front()<<endl;
+          st.pop_front();
+          }
+          else if(!st.empty() && reversed)
+          {
+            cout<<st.back()<<endl;
+            st.pop_back();
+          }
+          else
+            cout<<"No job for Ada?"<<endl;
+        }
+        else
+        {
+          if(!st.empty()&& !reversed)
+            {
+              cout<<st.back()<<endl;
+              st.pop_back();
+            }
+            else if(!st.empty()&&reversed)
+            {
+              cout<<st.front()<<endl;
+              st.pop_front();
+            }
+            else
+            {
+              cout<<"No job for Ada?"<<endl;
+            }
+        }
+    }
+}
